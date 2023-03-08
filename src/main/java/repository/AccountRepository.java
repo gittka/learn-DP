@@ -11,5 +11,7 @@ public interface AccountRepository {
     List<BankAccount> findAll();
     Optional<BankAccount> findById(Long id);
     List<BankAccount> findAccounts(Predicate<BankAccount> predicate);
+    BankAccount update(BankAccount bankAccount);
+    void deleteById(Long id);
 
 }
