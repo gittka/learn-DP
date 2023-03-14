@@ -1,13 +1,17 @@
 import main.java.adapter.client.AudioPlayer;
+import main.java.model.AccountStatus;
+import main.java.model.AccountType;
+import main.java.model.BankAccount;
 
 public class MainNew {
     public static void main(String[] args) {
-        System.out.println("######--------DESIGN PATTERNS--------######");
-
-        AudioPlayer audioPlayer=new AudioPlayer();
-        audioPlayer.play("mp4","Sky full of stars");
-        audioPlayer.play("vlc", "Cheap Thrills");
-        audioPlayer.play("mp3","Twinkle Twinkle");
-        audioPlayer.play("avi", "Osho");
+        BankAccount bankAccount = new BankAccount().builder()
+                .accountId(1L)
+                .accounCurrency("USD")
+                .accountStatus(AccountStatus.CREATED)
+                .accountType(AccountType.SAVING_ACCOUNT)
+                .accountBalance(1000.0)
+                .build();
+        System.out.printf(bankAccount.toString());
     }
 }
