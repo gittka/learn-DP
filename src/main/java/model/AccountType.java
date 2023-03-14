@@ -1,5 +1,5 @@
 package main.java.model;
 
-public enum AccounType {
+public enum AccountType {
     CURRENT_ACCOUNT,SAVING_ACCOUNT
 }
