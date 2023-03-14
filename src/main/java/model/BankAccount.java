@@ -4,7 +4,7 @@ public class BankAccount {
     private Long accountId;
     private double balance;
     private String currency;
-    private AccounType type;
+    private AccountType type;
     private AccountStatus status;
 
     public Long getAccountId() {
@@ -31,11 +31,11 @@ public class BankAccount {
         this.currency = currency;
     }
 
-    public AccounType getType() {
+    public AccountType getType() {
         return type;
     }
 
-    public void setType(AccounType type) {
+    public void setType(AccountType type) {
         this.type = type;
     }
 
@@ -50,7 +50,7 @@ public class BankAccount {
     public BankAccount() {
     }
 
-    public BankAccount(Long accountId, double balance, String currency, AccounType type, AccountStatus status) {
+    public BankAccount(Long accountId, double balance, String currency, AccountType type, AccountStatus status) {
         this.accountId = accountId;
         this.balance = balance;
         this.currency = currency;
@@ -67,5 +67,31 @@ public class BankAccount {
                 ", type=" + type +
                 ", status=" + status +
                 '}';
+    }
+    public static class BankAccountBuilder{
+        private BankAccount bankAccount = new BankAccount();
+        public BankAccountBuilder accountId(Long id){
+            bankAccount.setAccountId(id);
+            return this;
+        }
+        public BankAccountBuilder accountCurrency(String currency){
+            bankAccount.setCurrency(currency);
+            return this;
+        }
+        public BankAccountBuilder accountBalance(double balance){
+            bankAccount.setBalance(balance);
+            return this;
+        }
+        public BankAccountBuilder accountType(AccountType type){
+            bankAccount.setType(type);
+            return this;
+        }
+        public BankAccountBuilder accountStatus(AccountStatus status){
+            bankAccount.setStatus(status);
+            return this;
+        }
+        public BankAccount build(){
+            return bankAccount;
+        }
     }
 }
