@@ -70,8 +70,10 @@ public class BankAccount {
     }
     public static class BankAccountBuilder{
         private BankAccount bankAccount = new BankAccount();
-        public BankAccountBuilder accountId(Long id){
-            bankAccount.setAccountId(id);
+
+
+        public BankAccountBuilder accountId(Long accountId){
+            bankAccount.setAccountId(accountId);
             return this;
         }
         public BankAccountBuilder accountCurrency(String currency){
