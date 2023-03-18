@@ -71,11 +71,12 @@ public class BankAccount {
     public static class BankAccountBuilder{
         private BankAccount bankAccount = new BankAccount();
 
+
         public BankAccountBuilder accountId(Long accountId){
             bankAccount.setAccountId(accountId);
             return this;
         }
-        public BankAccountBuilder accounCurrency(String currency){
+        public BankAccountBuilder accountCurrency(String currency){
             bankAccount.setCurrency(currency);
             return this;
         }
